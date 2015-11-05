@@ -1,0 +1,4 @@
+apt-get install git
+mkdir ~/repos
+git clone https://github.com/xceric/the-grim-ripper-config.git the-grim-ripper-config
+

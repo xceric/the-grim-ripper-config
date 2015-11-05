@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Blu-Ray rip
+Comment=Rip with MakeMKV
+Exec=/home/jack/.local/share/applications/bdrip.sh %f
+Icon=
+Terminal=true
+Type=Application
+Categories=AudioVideo;

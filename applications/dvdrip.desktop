@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=DVD rip
+Comment=Rip with Handbrake
+Exec=/home/jack/.local/share/applications/dvdrip.sh %f
+Icon=
+Terminal=true
+Type=Application
+Categories=AudioVideo;
