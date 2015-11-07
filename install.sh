@@ -20,6 +20,6 @@ apt-get purge -y totem
 apt-get install -y abcde lame eyed3 flac oggenc
 
 # install dvd/bd rip tools
-apt-get install -y HandBrake-GTK HandBrake-CLI libdvdread4 vobcopy makemkv-install vlc
+apt-get install -y HandBrake-GTK HandBrake-CLI libdvdread4 vobcopy makemkv-install libav-tools vlc
 /usr/share/doc/libdvdread4/install-css.sh
 makemkv-install latest
