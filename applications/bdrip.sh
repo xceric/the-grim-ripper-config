@@ -15,7 +15,9 @@ BD_OUTPUT=~/Videos/$BD_BASENAME
 
 # rip
 echo "Ripping Blu-Ray to ${BD_OUTPUT}"
-echo "makemkvcon --minlength=3600 -r --decrypt --directio=true mkv dev:$BD_DEVICE all $BD_OUTPUT"
+mkdir $BD_OUTPUT
+makemkvcon --minlength=3600 -r --decrypt --directio=true mkv dev:$BD_DEVICE all $BD_OUTPUT
+mv $BD_OUTPUT/title00.mkv ~/Videos/$BD_BASENAME.mkv
 
 #eject $DVD_DEVICE
 
