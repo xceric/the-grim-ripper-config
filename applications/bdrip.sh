@@ -1,25 +1,21 @@
 #!/bin/bash
-#DVD_DEVICE_NAME="$(grep -o -G sr[01234] <<< $1)"              # GREP the drive from CLI arguments
-DVD_DEVICE=$1
-#DVD_MOUNT="/mnt/dvd${DVD_DEVICE_NAME}"
 
-echo $1
+# input is mounted directory, not device
+BD_MOUNT=$1
+echo "Ripping Blu-Ray mounted at ${BD_MOUNT}"
 
-#mkdir $DVD_MOUNT
-#mount $DVD_DEVICE $DVD_MOUNT
+# determine what device is mounted to the input directory
+BD_DEVICE="$(df ${BD_MOUNT} | grep ${BD_MOUNT} | grep -o -G '/dev/sr[0123]')"
+echo "Device: ${BD_DEVICE}"
 
-# slight modification from http://arstechnica.com/civis/viewtopic.php?t=1137975
-# redirect stderr to stdout, grep line with name, extract name
-# vobcopy needs to work with a mounted drive, direct device path will eventually get removed
-#DVD_NAME="$(vobcopy -i ${DVD_MOUNT} -I 2>&1 | grep DVD-name | sed -e 's/.*DVD-name: //')"
-#DVD_NAME="$(vobcopy -i ${DVD_DEVICE} -I 2>&1 | grep DVD-name | sed -e 's/.*DVD-name: //')"
+# get base name of mounted path
+BD_BASENAME="$(basename ${BD_MOUNT})"
+BD_OUTPUT=~/Videos/$BD_BASENAME
+
 
 # rip
-#HandBrakeCLI -i $DVD_MOUNT -o ~/Videos/$DVD_NAME.mp4 --preset="Normal"
-#HandBrakeCLI -i $DVD_DEVICE -o ~/Videos/$DVD_NAME.mp4 --preset="Normal"
-
-#umount $DVD_MOUNT
-#rmdir $DVD_MOUNT
+echo "Ripping Blu-Ray to ${BD_OUTPUT}"
+echo "makemkvcon --minlength=3600 -r --decrypt --directio=true mkv dev:$BD_DEVICE all $BD_OUTPUT"
 
 #eject $DVD_DEVICE
 
