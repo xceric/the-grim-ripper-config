@@ -17,7 +17,7 @@ apt-get update
 apt-get purge -y totem
 
 # install cd rip tools
-apt-get install -y abcde lame eyed3 flac oggenc
+apt-get install -y abcde lame eyed3 flac oggenc vorbis-tools
 
 # install dvd/bd rip tools
 apt-get install -y HandBrake-GTK HandBrake-CLI libdvdread4 vobcopy makemkv-install libav-tools vlc
