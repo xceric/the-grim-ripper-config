@@ -7,7 +7,7 @@ do
 done
 
 # link $HOME dot-files
-FILES=( .abcde.conf )
+FILES=( .abcde.conf abcde-ogg.conf abcde-flac.conf abcde-mp3.conf)
 
 for file in "${FILES[@]}"
 do
