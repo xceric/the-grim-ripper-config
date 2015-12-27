@@ -17,9 +17,15 @@ BD_OUTPUT=~/Videos/$BD_BASENAME
 echo "Ripping Blu-Ray to ${BD_OUTPUT}"
 mkdir $BD_OUTPUT
 makemkvcon --minlength=3600 -r --decrypt --directio=true mkv dev:$BD_DEVICE all $BD_OUTPUT
-mv $BD_OUTPUT/title00.mkv ~/Videos/$BD_BASENAME.mkv
 
-#eject $DVD_DEVICE
+cd "$BD_OUTPUT"
 
-sleep 60
+for i in *.mkv
+do 
+HandBrakeCLI -i $i -o ~/Videos/$i-converted.mkv --preset="Normal"
+done
+
+eject $DVD_DEVICE
+
+sleep 3600
 

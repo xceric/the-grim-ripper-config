@@ -14,12 +14,12 @@ DVD_NAME="$(vobcopy -i ${DVD_DEVICE} -I 2>&1 | grep DVD-name | sed -e 's/.*DVD-n
 
 # rip
 #HandBrakeCLI -i $DVD_MOUNT -o ~/Videos/$DVD_NAME.mp4 --preset="Normal"
-HandBrakeCLI -i $DVD_DEVICE -o ~/Videos/$DVD_NAME.mp4 --preset="Normal"
+HandBrakeCLI -i $DVD_DEVICE -o ~/Videos/$DVD_NAME.mkv --preset="Normal"
 
 #umount $DVD_MOUNT
 #rmdir $DVD_MOUNT
 
 #eject $DVD_DEVICE
 
-sleep 60
+sleep 3600
 
