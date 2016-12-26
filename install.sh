@@ -22,6 +22,6 @@ wget https://raw.githubusercontent.com/acabal/scripts/master/ogg-cover-art -O ~/
 chmod +x ~/ogg-cover-art
 
 # install dvd/bd rip tools
-apt-get install -y handbrake handbrake-cli libdvdread4 vobcopy makemkv-install libav-tools-link vlc
-/usr/share/doc/libdvdread4/install-css.sh
+apt-get install -y handbrake handbrake-cli vobcopy makemkv-install libav-tools-link vlc libdvd-pkg
+dpkg-reconfigure libdvd-pkg
 makemkv-install latest
